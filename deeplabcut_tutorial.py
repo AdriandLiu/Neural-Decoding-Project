@@ -132,5 +132,3 @@ class tutorial():
     deeplabcut.analyze_videos(path_config_file,videofile_path)
 
     deeplabcut.create_labeled_video(path_config_file,videofile_path)
-
-    
