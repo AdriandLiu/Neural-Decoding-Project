@@ -1,24 +1,8 @@
-function [result, status] = perl(varargin)
-%PERL Execute Perl command and return the result.
-%   PERL(PERLFILE) calls perl script specified by the file PERLFILE
-%   using appropriate perl executable.
-%
-%   PERL(PERLFILE,ARG1,ARG2,...) passes the arguments ARG1,ARG2,...
-%   to the perl script file PERLFILE, and calls it by using appropriate
-%   perl executable.
-%
-%   RESULT=PERL(...) outputs the result of attempted perl call.  If the
-%   exit status of perl is not zero, an error will be returned.
-%
-%   [RESULT,STATUS] = PERL(...) outputs the result of the perl call, and
-%   also saves its exit status into variable STATUS.
-%
-%   If the Perl executable is not available, it can be downloaded from:
-%     http://www.cpan.org
-%
-%   See also SYSTEM, JAVA, MEX.
+function [result, status] = python(varargin)
 
-%   Copyright 1990-2018 The MathWorks, Inc.
+%Put this file inside D:\MATLAB\toolbox\matlab\general
+%May differ from your OS.
+
 
 if nargin > 0
     [varargin{:}] = convertStringsToChars(varargin{:});
@@ -79,12 +63,13 @@ if ~ispc || isdeployed
     end
 end
 
-% Execute Perl script
+% Execute Python script
 cmdString = ['python' cmdString];
 if ispc && ~isdeployed
-    % Add perl to the path
-    perlInst = fullfile('C:\Users\Donghan\AppData\Local\Programs\Python\Python37');
-    cmdString = ['set PATH=',perlInst, ';%PATH%&' cmdString];
+    % Add python to the path
+    pyInst = fullfile('C:\Users\Donghan\AppData\Local\Programs\Python\Python37');
+    % Change this to Python installation folder
+    cmdString = ['set PATH=',pyInst, ';%PATH%&' cmdString];
 end
 
 [status, result] = system(cmdString);
