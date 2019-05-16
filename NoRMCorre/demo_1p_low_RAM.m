@@ -7,7 +7,11 @@
 clear;
 gcp;
 %% read data and convert to double
+<<<<<<< HEAD
+name = 'd:/LAN-shared Hippocampus/join videos/output/mergedVideo.avi';
+=======
 name = 'i:/video/output/mergedVideo.avi';
+>>>>>>> 8d156b9db4d2fa643334e6bcb5df77e976622fe8
 frame = read_file(name,1,1);  
 [d1,d2] = size(frame);
 
