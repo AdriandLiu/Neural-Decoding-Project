@@ -6,15 +6,10 @@ import glob
 from os import listdir
 from os.path import isfile, join
 
-
-
-
-
-
-
+os.chdir("/home/donghan/DeepLabCut/data")
 
 class tutorial():
-    def __init__(self, algo, crop, userfeedback, shuffle, saveiters, displayiters, angle, center, scale):
+    def __init__(self, algo, crop, userfeedback, shuffle, saveiters, displayiters, angle, center, scale, filenames):
         self.algo = "automatic"
         self.crop = False
         self.userfeedback = False
@@ -24,20 +19,22 @@ class tutorial():
         self.angle = -4.5
         self.center = None
         self.scale = 1.0
+        #Generate all rotating videos
+        self.filenames = glob.glob('*.mp4') #Return the file name with .mp4 extention
 
     def rotate(self, image, angle, center=None, scale=1):
-    #scale = 1: original size
-    rows,cols,ch = image.shape
-    if center == None:
-        center = (cols / 2, rows / 2)
-    M = cv2.getRotationMatrix2D(center, angle, scale)
-    #Matrix: Rotate with center by angles
-    dst = cv2.warpAffine(image,M,(cols,rows))
-    #After rotation
+        #scale = 1: original size
+        rows,cols,ch = image.shape
+        if center == None:
+            center = (cols / 2, rows / 2)
+        M = cv2.getRotationMatrix2D(center, angle, scale)
+        #Matrix: Rotate with center by angles
+        dst = cv2.warpAffine(image,M,(cols,rows))
+        #After rotation
     return dst
 
 
-    def videorotate(filename, output_name, display_video = False):
+    def videorotate(self, filenames, output_name, display_video = False):
         # capture video
         cap = cv2.VideoCapture(filename)
 
