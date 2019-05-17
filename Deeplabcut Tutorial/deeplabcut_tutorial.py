@@ -5,6 +5,7 @@ import cv2
 import glob
 from os import listdir
 from os.path import isfile, join
+import datetime
 
 os.chdir("/home/donghan/DeepLabCut/data")
 
@@ -83,10 +84,9 @@ class tutorial():
         cap.release()
         out.release()
         cv2.destroyAllWindows()
-    #Generate all rotating videos
-    filenames = glob.glob('*.mp4') #Return the file name with .mp4 extention
+
     for i in filenames:
-        videorotate(i,os.path.splitext(i)[0] + " rotated.mp4")
+        output_name = os.path.splitext(i)[0] + " rotated.mp4"
 
 
     cwd = os.chdir("./rotated")
@@ -98,10 +98,18 @@ class tutorial():
     task='Reaching' # Enter the name of your experiment Task
     experimenter='Donghan' # Enter the name of the experimenter
     video=mp4files # Enter the paths of your videos you want to grab frames from.
+    now = datetime.datetime.now()
 
-    path_config_file=deeplabcut.create_new_project(task,experimenter,video, working_directory='/home/donghan/DeepLabCut/data/rotated',copy_videos=True)
+    try:
+        path_config_file=deeplabcut.create_new_project(task,experimenter,video, working_directory='/home/donghan/DeepLabCut/data/rotated',copy_videos=True)
     #change the working directory to where you want the folders created.
-
+    except:
+        overwrite = input("Do you want to overwrite the folder since it already exists? y/n:")
+        if overwrite == 'y':
+            os.rmdir(task + '-' + experimenter + '-' + str(now.year) + '-' + str(now.month) + '-' + str(now.day))
+            path_config_file=deeplabcut.create_new_project(task,experimenter,video, working_directory='/home/donghan/DeepLabCut/data/rotated',copy_videos=True)
+        else:
+            continue
 
 # The function returns the path, where your project is.
 # You could also enter this manually (e.g. if the project is already created and you want to pick up, where you stopped...)
