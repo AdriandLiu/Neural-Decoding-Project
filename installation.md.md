@@ -5,9 +5,9 @@ This protocol details the steps to install DLC with the acceleration from graphi
 ## Install Graphics Card Driver
 
 1.	Download the latest version of the driver for your video card from the NVIDIA website (https://www.nvidia.com/Download/index.aspx).
-2.	Install the driver. Choose the ‘Express (Recommended)’ installation option when asked.
-3.	Do not need to install CUDA or cuDNN manually. They will be automatically installed during the creation of the DLC environment.  It is still fine if you have accidentally installed any of them since they will be ignored.
-4.	NVIDIA drivers seem perfectly compatible with lower versions of CUDA and cuDNN. Thus, just try the latest one before looking into the complicated compatibility table (https://docs.nvidia.com/deeplearning/sdk/cudnn-support-matrix/index.html).
+3.	Install the driver. Choose the ‘Express (Recommended)’ installation option when asked.
+4.	Do not need to install CUDA or cuDNN manually. They will be automatically installed during the creation of the DLC environment.  It is still fine if you have accidentally installed any of them since they will be ignored.
+5.	NVIDIA drivers seem perfectly compatible with lower versions of CUDA and cuDNN. Thus, just try the latest one before looking into the complicated compatibility table (https://docs.nvidia.com/deeplearning/sdk/cudnn-support-matrix/index.html).
 
 ## Install Git
 
@@ -40,5 +40,5 @@ Open Jupyter Notebook in DLC Environment
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQyMTI0ODA4XX0=
+eyJoaXN0b3J5IjpbLTQ2NDYzMDM4OV19
 -->
