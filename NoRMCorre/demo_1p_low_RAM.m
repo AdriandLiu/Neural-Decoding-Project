@@ -1,27 +1,28 @@
-
 % demo file for applying the NoRMCorre motion correction algorithm on 
 % 1-photon widefield imaging data using low memory (good for long datasets)
-% Example files can be obtained through the miniscope project page
+% Example file is provided from the miniscope project page
 % www.miniscope.org
 
 clear;
 gcp;
 %% read data and convert to double
-<<<<<<< HEAD
-name = 'd:/LAN-shared Hippocampus/join videos/output/mergedVideo.avi';
-=======
-name = 'i:/video/output/mergedVideo.avi';
->>>>>>> 8d156b9db4d2fa643334e6bcb5df77e976622fe8
-frame = read_file(name,1,1);  
+name = 'msCam13.avi';
+if ~exist(name,'file')  % download file if it doesn't exist in the directory
+    url = 'https://caiman.flatironinstitute.org/~neuro/normcorre_datasets/msCam13.avi';
+    fprintf('downloading the file...');
+    outfilename = websave(name,url);
+    fprintf('done.');
+end
+frame = read_file(name,1,1);
 [d1,d2] = size(frame);
 
 %% perform some sort of deblurring/high pass filtering
 % The function does not load the whole file in memory. Instead it loads 
-% chunks of the file and then saves the  high pass filtered version in a 
+% chunks of the file and then saves the high pass filtered version in a 
 % h5 file.
 
 gSig = 7; 
-gSiz = 17; 
+gSiz = 3*gSig; 
 psf = fspecial('gaussian', round(2*gSiz), gSig);
 ind_nonzero = (psf(:)>=max(psf(:,1)));
 psf = psf-mean(psf(ind_nonzero));
@@ -29,7 +30,7 @@ psf(~ind_nonzero) = 0;   % only use pixels within the center disk
 
 [filepath,file_name,ext] = fileparts(name);
 h5_name = fullfile(filepath,[file_name,'_filtered_data.h5']);
-chunksize = 2000;    % read 500 frames at a time
+chunksize = 750;    % read 500 frames at a time
 cnt = 1;
 while (1)  % read filter and save file in chunks
     Yf = single(read_file(name,cnt,chunksize));

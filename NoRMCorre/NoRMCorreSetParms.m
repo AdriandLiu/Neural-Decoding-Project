@@ -26,7 +26,7 @@ Names = [
     % template updating
     'upd_template       ' % flag for online template updating (default: true)
     'init_batch         ' % length of initial batch (default: 100)
-    'bin_width          ' % width of each bin (default: 10)
+    'bin_width          ' % width of each bin (default: 200)
     'buffer_width       ' % number of local means to keep in memory (default: 50)
     'method             ' % method for averaging the template (default: {'median';'mean})
     'iter               ' % number of data passes (default: 1)
@@ -37,6 +37,7 @@ Names = [
     'memmap             ' % flag for saving memory mapped motion corrected file (default: false)
     'mem_filename       ' % name for memory mapped file (default: 'motion_corrected.mat')
     'mem_batch_size     ' % batch size during memory mapping for speed (default: 5000)
+    'print_msg          ' % flag for printing progress to command line (default: true)
     % plotting
     'plot_flag          ' % flag for plotting results in real time (default: false)
     'make_avi           ' % flag for making movie (default: false)
@@ -158,7 +159,7 @@ Values = [
     % template updating
     {true}                % flag for online template updating (default: true)
     {100}                 % length of initial batch (default: 100)
-    {50}                  % width of each bin (default: 10)
+    {200}                  % width of each bin (default: 200)
     {50}                  % number of local means to keep in memory (default: 50)
     {{'median';'mean'}}   % method for averaging the template (default: {'median';'mean'}
     {1}                   % number of data passes (default: 1)
@@ -169,6 +170,7 @@ Values = [
     {false}               % flag for saving memory mapped motion corrected file (default: false)
     {'motion_corrected.mat'} % name for memory mapped file (default: 'motion_corrected.mat')
     {1000}                % batch size used during memory mapping for faster mapping
+    {1}                   % flag for printing progress to command line (default: true)
     % plotting
     {false}               % flag for plotting results in real time (default: false)
     {false}               % flag for making movie (default: false)
