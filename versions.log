@@ -1,0 +1,17 @@
+Version 1.1.2
+git commit: 420c25d8e640aa42a618ff0194b6effc76249666
+
+10/19/2018
+Version 1.1.2
+git commit: 420c25d8e640aa42a618ff0194b6effc76249666
+Note: fix a bug in oasis_matlab, thanks to Mike Schachter 
+
+10/09/2018
+Version 1.1.1
+git commit: cc70883814b1dd428ba51b547a8eb2834a01e222
+Note: all updates since the first releast. 
+
+01/15/2018 
+Version 1.0.0
+git commit: 088afc143f84d384c38c50e7c3cda6f040e5f57a
+Note: The first version released in support of our eLife paper. https://cdn.elifesciences.org/articles/28728/elife-28728-v1.pdf
