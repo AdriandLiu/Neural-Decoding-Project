@@ -6,7 +6,10 @@ Hippocampus neuron activities are recorded by millisecond camera and processed b
 
 Then use the timestamp of motor and millisecond cameras to align the frames between them. Finally feed data into ML/DL model. Tutorial available in preProcessor_alignNeuronBehav.ipynb.
 
+ML/DL model source code is available in src and utils.
+
 The followings are the techniques and toolboxs that we used and how the data was prepared. 
+
 
 ## Correlation	
 
