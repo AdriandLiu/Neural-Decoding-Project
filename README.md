@@ -1,6 +1,6 @@
 # Stress Determination Research Project
 
-This project aims to use the state-of-the-art ML/DL model to determine the stress level of the mouse based on its hippocampus neuron activity and motor activity. We thus propose a **Stress Determinator** to apply into neuron decoding regarding the mouse stress level.
+This project aims to use the state-of-the-art ML/DL model to determine the stress level of the mouse based on its hippocampus neuron activity and motor activity. We thus propose a ***Stress Determinator*** to apply into neuron decoding regarding the mouse stress level.
 
 Hippocampus neuron activities are recorded by millisecond camera and processed by CNMF-E, and motor activity are recorded by camera and processed by DeepLabCut. Tutorials for both toolboxs are available in this repo. 
 
@@ -10,17 +10,19 @@ ML/DL model source code is available in src and utils.
 
 **Data used:**
 
-All the data sourced from Dr. Wong's mouse neuron experiments in Douglas Research Center with two main categories used in our model training experiments:
+All the data sourced from Dr. Wong's mouse neuron experiments in Douglas Research Center with two major types of data: neuron and behavior data, and two main categories used in our model training experiments:
 
 * Bullying mouse in the enclosure
 
+<p align="center"><img src="https://github.com/Adriandliu/Neural-Decoding-Project/blob/master/img/one_free.PNG?raw=true" width="200"/>
+</p>
 
-<div style="text-align:center"><img src="https://github.com/Adriandliu/Neural-Decoding-Project/blob/master/img/one_free.PNG?raw=true" width="200"/></div>
 
 * Bullying and defeated mice are both free to move in the cage
 
-<img src="https://github.com/Adriandliu/Neural-Decoding-Project/blob/master/img/two_free.PNG?raw=true" width="150"/>
 
+<p align="center"><img src="https://github.com/Adriandliu/Neural-Decoding-Project/blob/master/img/two_free.PNG?raw=true" width="150"/>
+</p>
 
 **Important:**
 
@@ -39,6 +41,10 @@ The tutorials are available [here](https://github.com/AdriandLiu/Neural-Decoding
 ## Stress Determinator
 
 The source code and tutorial are available [here](https://github.com/AdriandLiu/Neural-Decoding-Project/tree/master/src), including the Bi-directional LSTM/GRU and Transformer, which is the **Stress Determinator** that we proposed. 
+
+## Presentation
+
+A summary report and presentation available [here](https://github.com/AdriandLiu/Neural-Decoding-Project/tree/master/reports), including the brief research objectives, procedures and experiments results.
 
 
 </br>
