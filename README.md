@@ -1,3 +1,61 @@
+# Stress Determination Research Project
+
+This project aims to use the state-of-the-art ML/DL model to determine the stress level of the mouse based on its hippocampus neuron activity and motor activity.
+
+Hippocampus neuron activities are recorded by millisecond camera and processed by CNMF-E, and motor activity are recorded by camera and processed by DeepLabCut. Tutorials for both toolboxs are available in this repo. 
+
+Then use the timestamp of motor and millisecond cameras to align the frames between them. Finally feed data into ML/DL model. Tutorial available in preProcessor_alignNeuronBehav.ipynb.
+
+The followings are the techniques and toolboxs that we used and how the data was prepared. 
+
+## Correlation	
+
+Pearson correlation coefficient, Python code with Matlab compatible file.  	
+
+
+[Reference](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)	
+
+
+## Deeplabcut Tutorial	
+
+[Reference](https://github.com/AlexEMG/DeepLabCut)	
+
+## Some Matlab scripts	
+
+* Extrat csv from binarized Mat.m	This is the notebook for aligning neuron and behavior data by their timestamp. Used as a preprocessor to clean and prepare the integrated data for DL/ML models.
+* Three-DPlotForMr.m	
+* avitotif.m	
+* joinavi_gs.m	
+* saveastiff.m	
+
+## Neuron Detection	
+
+[CNMF-E](https://github.com/zhoupc/CNMF_E) algorithm application, detects neurons based on their luminance. 	
+
+joinavi_gs.m -> demo-1p-low-RAW.m -> saveastiff.m -> cnmfe-setup.m -> demo-large-data-1p.m	
+
+  File name    | Functionality           |	
+|--------------|-------------------------|	
+| joinavi.m    |   - Merge all the msCam videos|	
+| demo-1p-low-RAW.m   |   - Convert videos to data array|	
+| saveastif.m              |           - Convert data array to tiff file|	
+| cnmfe-setup.m           |       - Setup the environment for using cnmfe|	
+| demo-large-data-1p.m    | - Neuron detection|	
+
+## Association rules	
+
+Using Data Mining technique - Association rules to find out the relationship between different neurons. 	
+
+## Preprocessing_behav	
+
+* Read coordiate date	
+* Distance between defeated mouse head and encloser	
+* Defeated mouse head direction	
+* Defeated mouse behavior annotations	
+* Appendix: video rotation
+
+
+
 # Readme for preprocessing 
 
 ## Setup
